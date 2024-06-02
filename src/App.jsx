@@ -93,32 +93,42 @@ function App() {
   console.log(weather);
 
   return (
-    <div className="App" style={{ backgroundImage: getBackgroundImage() }}>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        weather && (
-          <div className="weather-container">
-            <input
-              type="text"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              placeholder="Buscar ciudad o país"
-              className="search-input"
-            />
-            <button onClick={handleSearch} className="search-button">Buscar</button>
-            <h1>{weather.name}, {weather.sys.country}</h1>
-            <p>Condición: {weather.weather[0].description}</p>
-            <p>Temperatura: {getTemperature(weather.main.temp)}</p>
-            <p>Velocidad del viento: {weather.wind.speed} m/s</p>
-            <p>Porcentaje de nubes: {weather.clouds.all}%</p>
-            <p>Presión atmosférica: {weather.main.pressure} hPa</p>
-            <button onClick={toggleTemperature} className="temp-toggle">
-              {isCelsius ? 'Cambiar a °F' : 'Cambiar a °C'}
-            </button>
-          </div>
-        )
-      )}
+    <div>
+      <div className="wrapper">
+        <svg>
+          <text x="50%" y="50%" dy=".35em" textAnchor="middle">
+            Weather App
+          </text>
+        </svg>
+      </div>
+  
+      <div className="App" style={{ backgroundImage: getBackgroundImage() }}>
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          weather && (
+            <div className="weather-container">
+              <input
+                type="text"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+                placeholder="Buscar ciudad o país"
+                className="search-input"
+              />
+              <button onClick={handleSearch} className="search-button">Buscar</button>
+              <h1>{weather.name}, {weather.sys.country}</h1>
+              <p>Condición: {weather.weather[0].description}</p>
+              <p>Temperatura: {getTemperature(weather.main.temp)}</p>
+              <p>Velocidad del viento: {weather.wind.speed} m/s</p>
+              <p>Porcentaje de nubes: {weather.clouds.all}%</p>
+              <p>Presión atmosférica: {weather.main.pressure} hPa</p>
+              <button onClick={toggleTemperature} className="temp-toggle">
+                {isCelsius ? 'Cambiar a °F' : 'Cambiar a °C'}
+              </button>
+            </div>
+          )
+        )}
+      </div>
     </div>
   );
 }

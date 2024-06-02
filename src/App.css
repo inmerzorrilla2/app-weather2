@@ -1,3 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
+svg {
+	font-family: "Russo One", sans-serif;
+	width: 100%; height: 100%;
+}
+svg text {
+	animation: stroke 5s infinite alternate;
+	stroke-width: 2;
+	stroke: #365FA0;
+	font-size: 74px;
+}
+@keyframes stroke {
+	0%   {
+		fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1);
+		stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+	}
+	70%  {fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1); }
+	80%  {fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1); stroke-width: 3; }
+	100% {
+		fill: rgba(72,138,204,1); stroke: rgba(54,95,160,0);
+		stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+	}
+}
+
+.wrapper {background-color: #FFFFFF};
+
+
+
 body, html {
   margin: 0;
   padding: 0;
@@ -7,6 +36,7 @@ body, html {
 }
 
 .App {
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,7 +67,7 @@ body, html {
   padding: 10px;
   border-radius: 5px;
   border: none;
-  background-color: #007BFF;
+  background-color: #00050b;
   color: white;
   cursor: pointer;
   margin-bottom: 20px;
@@ -51,9 +81,10 @@ body, html {
   padding: 10px;
   border-radius: 5px;
   border: none;
-  background-color: #28a745;
-  color: white;
+  background-color: #dbe9de;
+  color: rgb(22, 1, 1);
   cursor: pointer;
+  font-size: 20px;
 }
 
 .temp-toggle:hover {
